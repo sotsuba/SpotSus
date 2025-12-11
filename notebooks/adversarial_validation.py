@@ -182,7 +182,6 @@ def create_adversarial_data(
         df_combined = pl.concat([df_train, df_test], how="vertical")
 
     cat_cols = df_combined.select(cs.string()).columns
-    num_cols = df_combined.select(cs.numeric()).columns
 
     df_combined = df_combined.with_columns(
         [
