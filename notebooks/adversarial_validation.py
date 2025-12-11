@@ -202,12 +202,6 @@ def create_adversarial_data(
 def plot_importances(df: pl.DataFrame, considering_features: list[str]) -> None:
     for feat in considering_features:
         grouped_df = df.group_by(av_target).agg(pl.col(feat).unique())
-        test = (
-            grouped_df.filter(pl.col(av_target) == 0)
-            .select(pl.col(feat).unique())
-            .item()
-            .to_list()
-        )
         group_0_list = grouped_df.filter(pl.col(av_target) == 0)[feat].to_list()[0]
         group_1_list = grouped_df.filter(pl.col(av_target) == 1)[feat].to_list()[0]
         unique_to_0 = list(set(group_1_list) - set(group_0_list))
