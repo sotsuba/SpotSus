@@ -220,9 +220,9 @@ def plot_importances(df: pl.DataFrame, considering_features: list[str]) -> None:
             group_0_list.sort()
             group_1_list.sort()
             unique_to_0.sort()
-        except:
+        except TypeError:
+            # Sorting failed, likely due to incompatible types in the list.
             pass
-
         print(f"\nFeature: {feat}")
 
         for target_val, values_list in grouped_df.iter_rows():
