@@ -1,0 +1,9 @@
+catboost:
+  iterations: 100
+  learning_rate: 0.01
+  depth: 6
+  eval_metric: AUC
+  random_seed: 42
+  early_stopping_rounds: 50
+  verbose: 100
+  use_best_model: true

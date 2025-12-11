@@ -1,3 +1,11 @@
+logs/
+mlruns/
+catboost_info/
+data/raw/*
+data/processed/*
+data/interim/*
+mlflow.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -5,7 +13,6 @@ __pycache__/
 
 # C extensions
 *.so
-
 # Distribution / packaging
 .Python
 build/
